@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smile face</title>
+</head>
+<body>
+    <canvas id="smileface" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+<script>
+    window.onload = function() {
+    var canvas = document.getElementById("smileface");
+    var ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 2;
+    //background
+    ctx.fillStyle = "rgb(144,238,144)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    
+    // head
+    ctx.beginPath();
+    ctx.arc(250, 250, 180, 0, Math.PI * 2, true); // circle
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.strokeStyle = "black"; 
+    ctx.stroke(); 
+    ctx.closePath();
+    
+
+    // eyes
+    ctx.beginPath();
+    ctx.arc(180, 200, 15, 0, Math.PI * 2, true); // left
+    ctx.arc(320, 200, 15, 0, Math.PI * 2, true); // rifht
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
+
+    //nose
+    ctx.beginPath();
+    ctx.moveTo(250, 250); 
+    ctx.lineTo(250, 300); 
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    ctx.closePath();
+
+    // mouth
+    ctx.beginPath();
+    ctx.arc(250, 300, 60, 0, Math.PI , false);
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // add text
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("The canvas brought me to life", 50, 480);
+};
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
